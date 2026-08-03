@@ -61,7 +61,9 @@ IICT-AI-ML-Summer-Internship-2026
 │   ├── README.md
 │   ├── fake_news_detection.py
 │   ├── requirements.txt
-│   ├── dataset_source.txt
+│   ├── data
+│   │   ├── .gitkeep
+│   │   └── WELFake_Dataset.csv        (Not included in GitHub)
 │   ├── workflow_methodology.png
 │   ├── plot_04_model_comparison.png
 │   ├── plot_05_confusion_matrices.png
@@ -72,13 +74,26 @@ IICT-AI-ML-Summer-Internship-2026
     ├── README.md
     ├── phishing_detection.py
     ├── requirements.txt
-    ├── dataset_source.txt
+    ├── data
+    │   ├── .gitkeep
+    │   └── Phishing_Email.csv         (Not included in GitHub)
     ├── p2_workflow_methodology.png
     ├── p2_plot_05_model_comparison.png
     ├── p2_plot_06_confusion_matrices.png
     ├── Phishing_Detection_Report.pdf
     └── Phishing_Detection_Presentation.pdf
 ```
+
+## 📦 Datasets
+
+The datasets used in this repository are **not included** because of GitHub file size limitations.
+
+| Project | Dataset | Status |
+|---------|---------|--------|
+| Fake News Detection | WELFake_Dataset.csv | Not included (284 MB) |
+| Phishing Detection | Phishing_Email.csv | Not included (49.6 MB) |
+
+Create a `data/` folder inside each project and place the corresponding dataset there before running the code.
 
 ---
 
