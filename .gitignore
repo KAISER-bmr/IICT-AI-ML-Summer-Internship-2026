@@ -1,11 +1,14 @@
+# ================================
 # Python
+# ================================
+
 __pycache__/
 *.py[cod]
-*.pyo
+*$py.class
 
-# Virtual environments
-.venv/
+# Virtual Environments
 venv/
+.venv/
 env/
 
 # Jupyter
@@ -20,13 +23,21 @@ env/
 # Windows
 Thumbs.db
 
-# Python environment files
-.python-version
-
-# Build artifacts
+# Build
 build/
 dist/
 *.egg-info/
 
 # Logs
 *.log
+
+# ================================
+# Datasets
+# ================================
+
+Project1_FakeNewsDetection/data/*.csv
+Project2_PhishingDetection/data/*.csv
+
+# Keep the folders
+!Project1_FakeNewsDetection/data/.gitkeep
+!Project2_PhishingDetection/data/.gitkeep
