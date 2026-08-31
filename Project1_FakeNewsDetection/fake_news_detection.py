@@ -107,3 +107,7 @@ from collections import Counter
 
 # Confirmation message
 print("All imports successful.")
+
+# ============================================================================= 
+# WEEK 1: DATA COLLECTION & CLEANING 
+# =============================================================================
