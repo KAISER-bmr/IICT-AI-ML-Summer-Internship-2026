@@ -112,4 +112,4 @@ print("All imports successful.")
 # WEEK 1: DATA COLLECTION & CLEANING 
 # =============================================================================
 
-print("\n" + "="*60)
+# Display a clear heading in the output for Week 1 
