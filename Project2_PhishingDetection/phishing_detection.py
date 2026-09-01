@@ -108,3 +108,7 @@ from collections import Counter
 # Confirmation messages
 print("All imports successful.")
 print("Note: This pipeline uses TF-IDF + metadata features (combined matrix).")
+
+# =============================================================================
+# WEEK 1: DATA COLLECTION & CLEANING
+# =============================================================================
