@@ -112,3 +112,5 @@ print("Note: This pipeline uses TF-IDF + metadata features (combined matrix).")
 # =============================================================================
 # WEEK 1: DATA COLLECTION & CLEANING
 # =============================================================================
+
+# Displays the Week 1 heading in the output
