@@ -113,3 +113,4 @@ print("All imports successful.")
 # =============================================================================
 
 # Display a clear heading in the output for Week 1 
+print("\n" + "="*60)
