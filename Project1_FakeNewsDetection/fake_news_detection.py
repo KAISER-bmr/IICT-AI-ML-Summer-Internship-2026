@@ -115,3 +115,4 @@ print("All imports successful.")
 # Display a clear heading in the output for Week 1 
 print("\n" + "="*60)
 print("WEEK 1: DATA LOADING & TEXT CLEANING")
+print("="*60)
