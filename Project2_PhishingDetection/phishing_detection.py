@@ -115,3 +115,4 @@ print("Note: This pipeline uses TF-IDF + metadata features (combined matrix).")
 
 # Displays the Week 1 heading in the output
 print("\n" + "="*60)
+print("WEEK 1: DATA LOADING & TEXT CLEANING")
