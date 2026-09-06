@@ -117,3 +117,5 @@ print("Note: This pipeline uses TF-IDF + metadata features (combined matrix).")
 print("\n" + "="*60)
 print("WEEK 1: DATA LOADING & TEXT CLEANING")
 print("="*60)
+
+# ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
