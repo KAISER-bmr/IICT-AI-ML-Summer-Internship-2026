@@ -116,3 +116,5 @@ print("All imports successful.")
 print("\n" + "="*60)
 print("WEEK 1: DATA LOADING & TEXT CLEANING")
 print("="*60)
+
+# ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
