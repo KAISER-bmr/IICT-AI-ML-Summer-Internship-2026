@@ -118,3 +118,5 @@ print("WEEK 1: DATA LOADING & TEXT CLEANING")
 print("="*60)
 
 # ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
+
+# Load the WELFake dataset into a Pandas DataFrame
