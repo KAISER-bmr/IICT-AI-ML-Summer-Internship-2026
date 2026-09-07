@@ -119,3 +119,5 @@ print("WEEK 1: DATA LOADING & TEXT CLEANING")
 print("="*60)
 
 # ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
+
+# Loads the phishing email dataset into a Pandas DataFrame
