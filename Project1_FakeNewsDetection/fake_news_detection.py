@@ -120,3 +120,4 @@ print("="*60)
 # ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
 
 # Load the WELFake dataset into a Pandas DataFrame
+df = pd.read_csv("WELFake_Dataset.csv")
