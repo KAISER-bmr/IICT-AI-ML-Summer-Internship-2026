@@ -121,3 +121,4 @@ print("="*60)
 # ── 1.1 Load Dataset ─────────────────────────────────────────────────────────
 
 # Loads the phishing email dataset into a Pandas DataFrame
+df = pd.read_csv("Phishing_Email.csv")
