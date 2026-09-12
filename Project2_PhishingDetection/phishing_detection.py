@@ -124,3 +124,4 @@ print("="*60)
 df = pd.read_csv("Phishing_Email.csv")
 
 # Removes any unnecessary unnamed index column if it exists
+df = df.drop(columns=[c for c in df.columns if 'Unnamed' in str(c)], errors='ignore')
