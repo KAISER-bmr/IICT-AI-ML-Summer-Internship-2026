@@ -123,3 +123,4 @@ print("="*60)
 df = pd.read_csv("WELFake_Dataset.csv")
 # Remove unnecessary serial/index columns if they are present in the dataset
 if 'Unnamed: 0' in df.columns or 'serial_num' in df.columns:
+    df = df.drop(columns=[c for c in df.columns if 'Unnamed' in c or c == 'serial_num'])
