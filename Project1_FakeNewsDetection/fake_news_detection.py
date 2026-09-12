@@ -121,3 +121,4 @@ print("="*60)
 
 # Load the WELFake dataset into a Pandas DataFrame
 df = pd.read_csv("WELFake_Dataset.csv")
+# Remove unnecessary serial/index columns if they are present in the dataset
