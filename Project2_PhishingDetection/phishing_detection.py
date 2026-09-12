@@ -122,3 +122,5 @@ print("="*60)
 
 # Loads the phishing email dataset into a Pandas DataFrame
 df = pd.read_csv("Phishing_Email.csv")
+
+# Removes any unnecessary unnamed index column if it exists
