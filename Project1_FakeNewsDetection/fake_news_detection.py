@@ -127,3 +127,4 @@ if 'Unnamed: 0' in df.columns or 'serial_num' in df.columns:
     df = df.drop(columns=[c for c in df.columns if 'Unnamed' in c or c == 'serial_num'])
 
 # Display the number of articles and columns in the dataset
+print(f"\nDataset loaded: {df.shape[0]:,} articles, {df.shape[1]} columns")
