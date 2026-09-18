@@ -127,3 +127,4 @@ df = pd.read_csv("Phishing_Email.csv")
 df = df.drop(columns=[c for c in df.columns if 'Unnamed' in str(c)], errors='ignore')
 
 # Displays the dataset size, column names and first few rows
+print(f"\nDataset loaded: {df.shape[0]:,} emails, {df.shape[1]} columns")
