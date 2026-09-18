@@ -134,3 +134,4 @@ print(f"Columns: {list(df.columns)}")
 
 # Show the first 3 rows to quickly inspect the dataset
 print(f"\nFirst 3 rows:\n{df.head(3)}")
+
