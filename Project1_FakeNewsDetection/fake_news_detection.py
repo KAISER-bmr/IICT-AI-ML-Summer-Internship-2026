@@ -131,3 +131,5 @@ print(f"\nDataset loaded: {df.shape[0]:,} articles, {df.shape[1]} columns")
 
 # Display all column names
 print(f"Columns: {list(df.columns)}")
+
+# Show the first 3 rows to quickly inspect the dataset
