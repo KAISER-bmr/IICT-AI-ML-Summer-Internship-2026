@@ -128,3 +128,4 @@ df = df.drop(columns=[c for c in df.columns if 'Unnamed' in str(c)], errors='ign
 
 # Displays the dataset size, column names and first few rows
 print(f"\nDataset loaded: {df.shape[0]:,} emails, {df.shape[1]} columns")
+print(f"Columns: {list(df.columns)}")
