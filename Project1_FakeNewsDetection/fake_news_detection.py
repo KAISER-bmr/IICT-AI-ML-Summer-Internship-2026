@@ -128,3 +128,6 @@ if 'Unnamed: 0' in df.columns or 'serial_num' in df.columns:
 
 # Display the number of articles and columns in the dataset
 print(f"\nDataset loaded: {df.shape[0]:,} articles, {df.shape[1]} columns")
+
+# Display all column names
+print(f"Columns: {list(df.columns)}")
