@@ -141,3 +141,5 @@ df = df.rename(columns={
 })
 
 # ── 1.3 Check missing values ─────────────────────────────────────────────────
+
+# Checks how many missing values are present in each column
