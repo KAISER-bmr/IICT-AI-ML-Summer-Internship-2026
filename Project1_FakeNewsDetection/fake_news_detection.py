@@ -142,3 +142,6 @@ print(f"\nMissing values per column:\n{df.isnull().sum()}")
 
 # Replace missing titles with an empty string so text operations do not fail
 df['title'] = df['title'].fillna('')
+
+# Replace missing article text with an empty string
+df['text'] = df['text'].fillna('')
