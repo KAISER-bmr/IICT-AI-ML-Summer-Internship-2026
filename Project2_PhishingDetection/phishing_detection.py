@@ -132,3 +132,5 @@ print(f"Columns: {list(df.columns)}")
 print(f"\nFirst 3 rows:\n{df.head(3)}")
 
 # ── 1.2 Rename columns for consistency ───────────────────────────────────────
+
+# Renames the original dataset columns to simpler names
