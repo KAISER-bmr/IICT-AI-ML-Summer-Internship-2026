@@ -135,3 +135,7 @@ print(f"\nFirst 3 rows:\n{df.head(3)}")
 
 # Renames the original dataset columns to simpler names
 # The dataset uses 'Email Text' and 'Email Type'
+df = df.rename(columns={
+    'Email Text': 'text',
+    'Email Type': 'label_raw'
+})
