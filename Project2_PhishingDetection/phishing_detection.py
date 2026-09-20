@@ -146,3 +146,4 @@ df = df.rename(columns={
 print(f"\nMissing values:\n{df.isnull().sum()}")
 
 # Replaces missing email text with an empty string
+df['text'] = df['text'].fillna('')
