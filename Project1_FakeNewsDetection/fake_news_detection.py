@@ -145,3 +145,6 @@ df['title'] = df['title'].fillna('')
 
 # Replace missing article text with an empty string
 df['text'] = df['text'].fillna('')
+
+# Combine the title and article body to create richer text information for the model
+df['combined'] = df['title'] + ' ' + df['text']
