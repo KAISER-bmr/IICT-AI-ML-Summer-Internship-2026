@@ -139,3 +139,5 @@ df = df.rename(columns={
     'Email Text': 'text',
     'Email Type': 'label_raw'
 })
+
+# ── 1.3 Check missing values ─────────────────────────────────────────────────
