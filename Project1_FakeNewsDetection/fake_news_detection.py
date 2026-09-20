@@ -139,3 +139,6 @@ print(f"\nFirst 3 rows:\n{df.head(3)}")
 
 # Check how many missing values are present in each column
 print(f"\nMissing values per column:\n{df.isnull().sum()}")
+
+# Replace missing titles with an empty string so text operations do not fail
+df['title'] = df['title'].fillna('')
