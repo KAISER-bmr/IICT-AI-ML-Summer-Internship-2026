@@ -136,3 +136,6 @@ print(f"Columns: {list(df.columns)}")
 print(f"\nFirst 3 rows:\n{df.head(3)}")
 
 # ── 1.2 Check for Missing Values ─────────────────────────────────────────────
+
+# Check how many missing values are present in each column
+print(f"\nMissing values per column:\n{df.isnull().sum()}")
