@@ -144,3 +144,5 @@ df = df.rename(columns={
 
 # Checks how many missing values are present in each column
 print(f"\nMissing values:\n{df.isnull().sum()}")
+
+# Replaces missing email text with an empty string
