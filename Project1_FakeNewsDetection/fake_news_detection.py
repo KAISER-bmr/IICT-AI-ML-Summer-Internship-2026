@@ -154,3 +154,5 @@ df['combined'] = df['title'] + ' ' + df['text']
 # Display the number of Fake and Real news articles in the dataset
 print(f"\nLabel distribution:")
 print(df['label'].value_counts().rename({0: 'Fake (0)', 1: 'Real (1)'}))
+
+# Create a figure for visualizing the class distribution
