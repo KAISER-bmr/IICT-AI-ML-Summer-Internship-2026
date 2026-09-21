@@ -149,3 +149,7 @@ print(f"\nMissing values:\n{df.isnull().sum()}")
 df['text'] = df['text'].fillna('')
 
 # ── 1.4 Encode labels ────────────────────────────────────────────────────────
+
+# Converts text labels into numerical labels for Machine Learning
+# "Phishing Email" -> 1, "Safe Email" -> 0
+df['label'] = (df['label_raw'] == 'Phishing Email').astype(int)
