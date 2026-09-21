@@ -159,3 +159,6 @@ print(df['label'].value_counts().rename({0: 'Fake (0)', 1: 'Real (1)'}))
 plt.figure(figsize=(5, 4))
 
 # Create a bar chart showing the number of Fake and Real news articles
+df['label'].value_counts().rename({0: 'Fake', 1: 'Real'}).plot( 
+    kind='bar', color=['#e74c3c','#2ecc71'], edgecolor='black'
+)
