@@ -156,3 +156,4 @@ print(f"\nLabel distribution:")
 print(df['label'].value_counts().rename({0: 'Fake (0)', 1: 'Real (1)'}))
 
 # Create a figure for visualizing the class distribution
+plt.figure(figsize=(5, 4))
