@@ -167,3 +167,6 @@ df['label'].value_counts().rename({0: 'Fake', 1: 'Real'}).plot(
 plt.title('Label Distribution: Real vs Fake News')
 plt.xlabel('Category')
 plt.ylabel('Count')
+
+# Keep category labels horizontal for better readability 
+plt.xticks(rotation=0)
