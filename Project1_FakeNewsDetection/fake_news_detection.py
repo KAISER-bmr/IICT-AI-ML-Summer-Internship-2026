@@ -150,3 +150,7 @@ df['text'] = df['text'].fillna('')
 df['combined'] = df['title'] + ' ' + df['text']
 
 # ── 1.3 Label Distribution ───────────────────────────────────────────────────
+
+# Display the number of Fake and Real news articles in the dataset
+print(f"\nLabel distribution:")
+print(df['label'].value_counts().rename({0: 'Fake (0)', 1: 'Real (1)'}))
