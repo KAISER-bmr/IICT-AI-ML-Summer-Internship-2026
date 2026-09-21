@@ -179,3 +179,6 @@ plt.savefig('plot_01_label_distribution.png')
 
 # Display the graph 
 plt.show()
+
+# Confirm that the graph was saved successfully 
+print("Saved: plot_01_label_distribution.png")
