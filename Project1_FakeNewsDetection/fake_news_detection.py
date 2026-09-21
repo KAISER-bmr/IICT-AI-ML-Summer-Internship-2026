@@ -170,3 +170,6 @@ plt.ylabel('Count')
 
 # Keep category labels horizontal for better readability 
 plt.xticks(rotation=0)
+
+# Adjust spacing so all graph elements fit properly 
+plt.tight_layout()
