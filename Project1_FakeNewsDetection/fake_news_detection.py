@@ -162,3 +162,5 @@ plt.figure(figsize=(5, 4))
 df['label'].value_counts().rename({0: 'Fake', 1: 'Real'}).plot( 
     kind='bar', color=['#e74c3c','#2ecc71'], edgecolor='black'
 )
+
+# Add a title and axis labels to make the graph easier to understand
