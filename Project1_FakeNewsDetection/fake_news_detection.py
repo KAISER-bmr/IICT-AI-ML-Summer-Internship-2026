@@ -168,8 +168,11 @@ plt.title('Label Distribution: Real vs Fake News')
 plt.xlabel('Category')
 plt.ylabel('Count')
 
-# Keep category labels horizontal for better readability 
+# Keep category labels horizontal for better readability
 plt.xticks(rotation=0)
 
-# Adjust spacing so all graph elements fit properly 
+# Adjust spacing so all graph elements fit properly
 plt.tight_layout()
+
+# Save the label distribution graph as an image file
+plt.savefig('plot_01_label_distribution.png')
