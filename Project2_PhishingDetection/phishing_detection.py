@@ -161,3 +161,25 @@ print(df['label_raw'].value_counts())
 # Shows the encoded label counts
 print(f"\nEncoded: Phishing=1 ({df['label'].sum():,}) | "
       f"Safe=0 ({(df['label']==0).sum():,})")
+
+# Plot label distribution
+
+# Creates a bar graph showing phishing and safe email counts
+plt.figure(figsize=(5, 4))
+df['label_raw'].value_counts().plot(
+    kind='bar', color=['#e74c3c', '#2ecc71'], edgecolor='black'
+)
+
+# Adds title and axis labels to the graph
+plt.title('Label Distribution: Phishing vs Safe Emails')
+plt.xlabel('Email Type')
+plt.ylabel('Count')
+
+# Adjusts the label angle for better readability
+plt.xticks(rotation=15, ha='right')
+plt.tight_layout()
+
+# Saves the graph as an image file
+plt.savefig('p2_plot_01_label_distribution.png')
+plt.show()
+print("Saved: p2_plot_01_label_distribution.png")
