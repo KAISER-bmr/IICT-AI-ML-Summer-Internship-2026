@@ -164,3 +164,6 @@ df['label'].value_counts().rename({0: 'Fake', 1: 'Real'}).plot(
 )
 
 # Add a title and axis labels to make the graph easier to understand
+plt.title('Label Distribution: Real vs Fake News')
+plt.xlabel('Category')
+plt.ylabel('Count')
