@@ -176,3 +176,6 @@ plt.tight_layout()
 
 # Save the label distribution graph as an image file
 plt.savefig('plot_01_label_distribution.png')
+
+# Display the graph 
+plt.show()
