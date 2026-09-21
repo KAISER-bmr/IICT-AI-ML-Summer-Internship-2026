@@ -157,3 +157,7 @@ df['label'] = (df['label_raw'] == 'Phishing Email').astype(int)
 # Displays the number of phishing and safe emails
 print(f"\nLabel distribution:")
 print(df['label_raw'].value_counts())
+
+# Shows the encoded label counts
+print(f"\nEncoded: Phishing=1 ({df['label'].sum():,}) | "
+      f"Safe=0 ({(df['label']==0).sum():,})")
