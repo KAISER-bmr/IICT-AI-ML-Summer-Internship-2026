@@ -153,3 +153,7 @@ df['text'] = df['text'].fillna('')
 # Converts text labels into numerical labels for Machine Learning
 # "Phishing Email" -> 1, "Safe Email" -> 0
 df['label'] = (df['label_raw'] == 'Phishing Email').astype(int)
+
+# Displays the number of phishing and safe emails
+print(f"\nLabel distribution:")
+print(df['label_raw'].value_counts())
