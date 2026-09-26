@@ -183,3 +183,107 @@ plt.tight_layout()
 plt.savefig('p2_plot_01_label_distribution.png')
 plt.show()
 print("Saved: p2_plot_01_label_distribution.png")
+
+# ── 1.5 Metadata feature extraction ──────────────────────────────────────────
+
+# Extracts structural features before cleaning the text
+# This is the key addition over Project 1: structural features extracted
+# BEFORE cleaning so URLs and punctuation are still present.
+
+def extract_metadata(text):
+    """
+    Extract structural metadata from raw email text.
+    These features capture suspicious STRUCTURE (not just language).
+    """
+
+    # Converts the input into a string to avoid datatype errors
+    text = str(text)
+
+    # Counts the number of URLs present in the email
+    url_count = len(re.findall(r'https?://\S+|www\.\S+', text))
+
+    # Counts words commonly associated with urgency or phishing attempts
+    urgent_words = len(re.findall(
+        r'\b(urgent|immediately|now|click|verify|suspend|expire|warning|'
+        r'alert|limited|confirm|account|password|bank|prize|winner|free|'
+        r'offer|act|login|update|security|billing|payment)\b',
+        text.lower()
+    ))
+
+    # Counts exclamation marks in the email
+    exclaim_count = text.count('!')
+
+    # Calculates the proportion of uppercase characters
+    caps_ratio = (sum(1 for c in text if c.isupper())
+                  / max(len(text), 1))
+
+    # Stores whether the email contains at least one URL
+    has_url = int(url_count > 0)
+
+    # Stores whether the email contains a dollar sign
+    has_dollar = int('$' in text)
+
+    # Returns all extracted metadata features
+    return [url_count, urgent_words, exclaim_count,
+            caps_ratio, has_url, has_dollar]
+
+
+# Extracts metadata features from every email
+print("\nExtracting metadata features...")
+meta_raw = np.array([extract_metadata(t) for t in df['text']])
+
+# Names given to each extracted metadata feature
+meta_labels = ['URL Count', 'Urgent Words', 'Exclamations',
+               'Caps Ratio', 'Has URL', 'Has Dollar Sign']
+
+# Displays the size of the metadata feature matrix
+print(f"Metadata matrix shape: {meta_raw.shape}")
+
+# Converts metadata into a DataFrame for easier analysis
+print(f"\nMean metadata values by class:")
+meta_df = pd.DataFrame(meta_raw, columns=meta_labels)
+
+# Adds the phishing/safe label to the metadata DataFrame
+meta_df['label'] = df['label'].values
+
+# Calculates the average metadata values for each class
+print(meta_df.groupby('label').mean().rename(index={0:'Safe',1:'Phishing'}))
+
+# Plot metadata comparison
+
+# Calculates average metadata values for phishing emails
+phishing_meta = meta_raw[df['label']==1].mean(axis=0)
+
+# Calculates average metadata values for safe emails
+safe_meta = meta_raw[df['label']==0].mean(axis=0)
+
+# Creates positions for each metadata feature on the graph
+x = np.arange(len(meta_labels))
+
+# Creates a grouped bar chart for comparison
+fig, ax = plt.subplots(figsize=(10, 5))
+
+# Plots average metadata values for phishing emails
+b1 = ax.bar(x - 0.2, phishing_meta, 0.4, label='Phishing',
+            color='#e74c3c', edgecolor='black')
+
+# Plots average metadata values for safe emails
+b2 = ax.bar(x + 0.2, safe_meta, 0.4, label='Safe',
+            color='#2ecc71', edgecolor='black')
+
+# Adds feature names and graph labels
+ax.set_xticks(x)
+ax.set_xticklabels(meta_labels, rotation=15, ha='right')
+ax.set_title('Metadata Feature Comparison: Phishing vs Safe Emails')
+ax.set_ylabel('Mean Value')
+ax.legend()
+
+# Displays the numerical value above each bar
+ax.bar_label(b1, fmt='%.2f', padding=2, fontsize=8)
+ax.bar_label(b2, fmt='%.2f', padding=2, fontsize=8)
+
+# Adjusts spacing and saves the graph
+plt.tight_layout()
+plt.savefig('p2_plot_02_metadata_comparison.png')
+plt.show()
+print("Saved: p2_plot_02_metadata_comparison.png")
