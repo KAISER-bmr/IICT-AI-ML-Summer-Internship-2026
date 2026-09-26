@@ -182,3 +182,58 @@ plt.show()
 
 # Confirm that the graph was saved successfully 
 print("Saved: plot_01_label_distribution.png")
+
+# ── 1.4 Text Cleaning Function ───────────────────────────────────────────────
+
+# Load English stopwords such as "the", "is", and "and" for removal 
+stop_words = set(stopwords.words('english'))
+
+# Create a lemmatizer to convert words into their base form 
+lemmatizer = WordNetLemmatizer()
+
+# Define a function to clean and prepare article text for Machine Learning
+def clean_text(text):
+    """ 
+    Full text cleaning pipeline: 
+          - Convert text to lowercase 
+          - Remove URLs 
+          - Remove non-alphabetic characters 
+          - Remove extra spaces 
+          - Split text into individual words 
+          - Remove stopwords and very short words 
+          - Lemmatize words into their base form 
+    """
+
+    # Return an empty string if the input is not valid text 
+    if not isinstance(text, str): 
+        return ''
+
+    # Convert all text to lowercase for consistency
+    text = text.lower()
+
+    # Remove website links and URLs from the text
+    text = re.sub(r'https?://\S+|www\.\S+', ' ', text)
+
+    # Remove numbers, punctuation, and symbols while keeping letters and spaces
+    text = re.sub(r'[^a-z\s]', ' ', text)
+
+    # Remove extra spaces created during cleaning
+    text = re.sub(r'\s+', ' ', text).strip()
+
+    # Split the cleaned text into individual words
+    tokens = text.split()
+
+    # Remove stopwords and short words, then convert remaining words to base form
+    tokens = [ 
+        lemmatizer.lemmatize(t) 
+        for t in tokens if t not in stop_words and len(t) > 2 
+    ]
+
+    # Join the cleaned words back into a single text string
+    return ' '.join(tokens)
+
+# Inform the user that text cleaning has started
+print("\nCleaning text... (this may take 1-2 minutes on the full dataset)")
+
+# Apply the cleaning function to every article in the dataset
+df['clean_text'] = df['combined'].apply(clean_text)
